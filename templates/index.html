@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/static/CSS/index.css">
+  <title>Retirement Planning Form</title>
+</head>
+<body>
+
+  <div id="loading-screen">
+    <div id="loading-spinner"></div>
+    <div id="loading-text">Please wait as we generate your report. This process may take a few seconds to a minute.</div>
+  </div>
+
+
+
+  <div class="major-container">
+  <img src="/static/assets/circle_top.png" height="150px">
+  <div class="container">
+  <div class="man_img">
+  <img src="/static/assets/man_img.png">
+  </div>
+  <div class="sub-container">
+  <svg xmlns="http://www.w3.org/2000/svg" width="346" height="77" viewBox="0 0 346 77" fill="none">
+    <path d="M1 66.5V38.5C1 32.9772 5.47715 28.5 11 28.5H19.5938C22.9672 28.5 26.1133 26.7992 27.9608 23.9766L34 14.75L40.0392 5.52341C41.8867 2.70084 45.0328 1 48.4062 1H294.982C298.14 1 301.112 2.49157 302.999 5.02335L317.501 24.4767C319.388 27.0084 322.36 28.5 325.518 28.5H335C340.523 28.5 345 32.9772 345 38.5V66.5C345 72.0229 340.523 76.5 335 76.5H11C5.47715 76.5 1 72.0229 1 66.5Z" fill="#1F348A" stroke="#1F348A"/>
+  </svg>
+  <div class="board">
+    <div class="ret_title">
+        <div class="typing">
+          <h2>RETIREMENT REPORT DETAILS</h2>
+        </div>
+    </div>
+
+    <form action="/gen_report" method="post" id="reportForm" onsubmit="showLoadingScreen();">
+      <!-- Personal Details -->
+      <fieldset>
+        
+        <legend>Personal Details</legend>
+
+        <div class="label-and-input">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" class="textb" required>
+      </div>
+
+
+        <div class="label-and-input">
+        <label for="age">Age:</label>
+        <input type="number" id="age" name="age" class="textb" required>
+      </div>
+  
+
+        <div class="label-and-input">
+        <label for="retirementAge">Retirement Age Goal:</label>
+        <input type="number" id="retirementAge" name="retirementAge" class="textb" required>
+      </div>
+      </fieldset>
+  
+      <!-- Expense Details -->
+      <fieldset>
+        <legend>Expense Details</legend>
+
+        <div class="label-and-input">
+        <label for="savings">Savings:</label>
+        <input type="number" id="savings" name="savings" class="textb" required>
+        </div>
+
+       
+  
+        <div class="label-and-input">
+        <label for="income">Income:</label>
+        <input type="number" id="income" name="income" class="textb" required>
+        </div>
+
+     
+
+        <div class="label-and-input">
+        <label for="livingExpenses">Living Expenses (Yearly):</label>
+        <input type="number" id="livingExpenses" name="livingExpenses" class="textb" required>
+        </div>
+
+     
+        <div class="label-and-input">
+        <label for="healthcareExpenses">Healthcare Expenses (Yearly):</label>
+        <input type="number" id="healthcareExpenses" name="healthcareExpenses" class="textb" required>
+        </div>
+  
+   
+
+        <div class="label-and-input">
+        <label for="miscellaneousExpenses">Miscellaneous Expenses (Yearly):</label>
+        <input type="number" id="miscellaneousExpenses" name="miscellaneousExpenses" class="textb" required>
+        </div>
+      </fieldset>
+  
+      <!-- Submit Button -->
+      <input type="submit" value="Submit">
+    </form>
+</div>
+<img src="/static/assets/circle_side.png"  class="circle_side">
+</div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    document.getElementById('reportForm').addEventListener('submit', function (event) {
+      event.preventDefault();
+      document.getElementById('loading-screen').style.display = 'flex';
+      // No need for the setTimeout, as the loading screen will persist until the new page is loaded.
+      document.getElementById('reportForm').submit();
+    });
+  });
+</script>
+
+</body>
+</html>

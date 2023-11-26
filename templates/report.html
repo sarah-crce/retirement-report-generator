@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>View and Download PDF</title>
+  <style>
+    
+    .download-button {
+      padding: 10px 15px;
+      font-size: 16px;
+      text-align: center;
+      text-decoration: none;
+      cursor: pointer;
+      background-color: #1F348A;
+      color: white;
+      border: none;
+      border-radius: 5px;
+    }
+  </style>
+</head>
+<body>
+
+    <table>
+    <tr>
+    <td><iframe src="{{ url_for('static', filename='output_report.pdf') }}" width="900px" height="800px" style="margin-left: 10vw;"></iframe></td>
+
+    <td style="padding-left: 100px;">
+    <button class="download-button" id="downloadButton">
+      Download PDF
+    </button>
+    </td>
+    </tr>
+    </table>
+
+    <script>
+      document.getElementById('downloadButton').addEventListener('click', function() {
+        window.location.href = "{{ url_for('download_report') }}";
+      });
+    </script>
+
+</body>
+</html>

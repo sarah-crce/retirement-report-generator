@@ -33,15 +33,15 @@
             <div class="col-12">
                 <nav class="main-nav">
                     <!-- ***** Logo Start ***** -->
-                    <a href="index.html" class="logo">
+
                         <h1>Simulatrix</h1>
-                    </a>
+           
                     <!-- ***** Logo End ***** -->
                     <!-- ***** Menu Start ***** -->
                     <ul class="nav">
                         <li class="scroll-to-section"><a href="#top" class="active">Retirement Report Generator</a></li>
-                        <li class="scroll-to-section"><a href="/index.html">Go Back</a></li>
-                        <li class="scroll-to-section"><a href="/index.html">LogOut</a></li>
+                        <li class="scroll-to-section"><a href="#" onclick="goBack()">Go Back</a></li>
+                        <li class="scroll-to-section"><a href="#" onclick="goBack()">LogOut</a></li>
                     </ul>
                     <a class='menu-trigger'>
                         <span>Menu</span>
@@ -77,6 +77,10 @@
       document.getElementById('downloadButton').addEventListener('click', function() {
         window.location.href = "{{ url_for('download_report') }}";
       });
+
+      function goBack() {
+        window.history.back();
+    }
     </script>
 
 </body>

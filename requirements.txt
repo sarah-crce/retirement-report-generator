@@ -3,3 +3,4 @@ numpy
 matplotlib
 flask
 reportlab
+gunicorn

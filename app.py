@@ -1,6 +1,7 @@
 from flask import Flask, redirect, request, render_template, send_file, send_from_directory, url_for
 import report
 
+
 app = Flask(__name__)
 
 @app.route('/')

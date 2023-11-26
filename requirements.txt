@@ -3,5 +3,5 @@ numpy
 matplotlib
 flask
 reportlab
-sklearn
+scikit-learn==1.3.2
 gunicorn

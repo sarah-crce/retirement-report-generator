@@ -3,9 +3,15 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/static/CSS/templatemo-scholar.css">
+  <link rel="stylesheet" href="/static/CSS/index.css">
   <title>View and Download PDF</title>
   <style>
     
+    table{
+      margin-top: 2%;
+    }
     .download-button {
       padding: 10px 15px;
       font-size: 16px;
@@ -21,6 +27,32 @@
 </head>
 <body>
 
+  <header class="header-area header-sticky">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <nav class="main-nav">
+                    <!-- ***** Logo Start ***** -->
+                    <a href="index.html" class="logo">
+                        <h1>Simulatrix</h1>
+                    </a>
+                    <!-- ***** Logo End ***** -->
+                    <!-- ***** Menu Start ***** -->
+                    <ul class="nav">
+                        <li class="scroll-to-section"><a href="#top" class="active">Retirement Report Generator</a></li>
+                        <li class="scroll-to-section"><a href="/index.html">Go Back</a></li>
+                        <li class="scroll-to-section"><a href="/index.html">LogOut</a></li>
+                    </ul>
+                    <a class='menu-trigger'>
+                        <span>Menu</span>
+                    </a>
+                    <!-- ***** Menu End ***** -->
+                </nav>
+            </div>
+        </div>
+    </div>
+</header>
+
     <table>
     <tr>
     <td><iframe src="{{ url_for('static', filename='output_report.pdf') }}" width="900px" height="800px" style="margin-left: 10vw;"></iframe></td>
@@ -32,6 +64,14 @@
     </td>
     </tr>
     </table>
+
+    <footer>
+      <div class="container">
+          <div class="col-lg-12">
+              <p>Designed and Developed by Team Simulatrix</p>
+          </div>
+      </div>
+    </footer>
 
     <script>
       document.getElementById('downloadButton').addEventListener('click', function() {
